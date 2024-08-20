@@ -13,7 +13,7 @@ picam2.start()
 while True:
 
     frame = picam2.capture_array()
-
+    rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
 
     cv2.imshow("Camera", frame)
 
