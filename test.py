@@ -21,7 +21,8 @@ while True:
     frame = piCam2.capture_array()
     corners, ids, rejectedCandidates = detector.detectMarkers(frame)
 
-    print(ids)
+    if ids is not None:
+        print(ids)
     
     cv2.imshow("piCam", frame)
     if cv2.waitKey(1) == ord('q'):
