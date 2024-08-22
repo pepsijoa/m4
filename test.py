@@ -14,18 +14,17 @@ def detect():
     parameters = aruco.DetectorParameters()
     detector = aruco.ArucoDetector(dictionary, parameters)
 
-    # markerCiorners, markerIds, rejectedCandidates = detector.detectMarkers(frame)
 
     while True:
         frame = piCam2.capture_array()
         corners, ids, rejectedCandidates = detector.detectMarkers(frame)
 
         if ids is not None:
-            print(type(ids[0][0]))
-            print(ids[0][0])
+            return (str(ids[0][0]))
         
         cv2.imshow("piCam", frame)
         if cv2.waitKey(1) == ord('q'):
             break
     cv2.destroyAllWindows()
-detect()
+
+print(detect())
