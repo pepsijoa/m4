@@ -38,10 +38,10 @@ def set_motor_b(forward, speed):
 
 def move_forward(distance, speed=100):
     for i in range(speed):	
-		set_motor_a(True, i)
-		set_motor_b(True, i)
-	time.sleep(distance)
-	stop()
+        set_motor_a(True, i)
+        set_motor_b(True, i)
+    time.sleep(distance)
+    stop()
 
 def move_backward(distance, speed=100):
     set_motor_a(False, speed)
