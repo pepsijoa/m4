@@ -19,6 +19,11 @@ detector = aruco.ArucoDetector(dictionary, parameters)
 
 while True:
     frame = piCam2.capture_array()
+    corners, ids, rejectedCandidates = detector.detectMarkers(frame)
+
+    for id in ids:
+        print(id)
+    
     cv2.imshow("piCam", frame)
     if cv2.waitKey(1) == ord('q'):
         break
