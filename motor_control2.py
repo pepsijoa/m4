@@ -37,11 +37,11 @@ def set_motor_b(forward, speed):
     pwm_b.ChangeDutyCycle(speed)
 
 def move_forward(distance, speed=100):
-    for i in range(speed):	
-        print(speed)
+    for i in range(100):	
+        print(i)
         set_motor_a(True, i)
         set_motor_b(True, i)
-        time.sleep(1.5)
+        time.sleep(.2)
     #time.sleep(distance)
     stop()
 
