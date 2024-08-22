@@ -73,23 +73,23 @@ def parse_command(command):
 
 try:
     while True:
-        user_input = input("Enter command (e.g., R\\10, L\\10, F\\10, B\\10): ")
+        user_input = input("Enter command (e.g., R'\\'10, L'\\'10, F'\\'10, B'\\'10): ")
         direction, distance = parse_command(user_input)
-
-        if direction == 'R':
-            turn_right(distance)
-            print("ok")  # 우회전 후 ok 출력
-        elif direction == 'L':
-            turn_left(distance)
-            print("ok")  # 좌회전 후 ok 출력
-        elif direction == 'F':
-            move_forward(distance)
-            print("ok")  # 전진 후 ok 출력
-        elif direction == 'B':
-            move_backward(distance)
-            print("ok")  # 후진 후 ok 출력
-        else:
-            print("Invalid command")
+        print(direction, distance)
+        # if direction == 'R':
+        #     turn_right(distance)
+        #     print("ok")  # 우회전 후 ok 출력
+        # elif direction == 'L':
+        #     turn_left(distance)
+        #     print("ok")  # 좌회전 후 ok 출력
+        # elif direction == 'F':
+        #     move_forward(distance)
+        #     print("ok")  # 전진 후 ok 출력
+        # elif direction == 'B':
+        #     move_backward(distance)
+        #     print("ok")  # 후진 후 ok 출력
+        # else:
+        #     print("Invalid command")
 
 except KeyboardInterrupt:
     pass
