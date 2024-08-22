@@ -38,6 +38,7 @@ def set_motor_b(forward, speed):
 
 def move_forward(distance, speed=100):
     for i in range(speed):	
+        print(speed)
         set_motor_a(True, i)
         set_motor_b(True, i)
     time.sleep(distance)
