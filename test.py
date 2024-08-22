@@ -9,6 +9,8 @@ piCam2.preview_configuration.align()
 piCam2.configure("preview")
 piCam2.start()
 
+aruco_dict = aruco.Dictionary_get(aruco.DICT_4X4_50)
+parameters = aruco.DetectorParameters_create()
 
 while True:
     frame = piCam2.capture_array()
