@@ -9,8 +9,13 @@ piCam2.preview_configuration.align()
 piCam2.configure("preview")
 piCam2.start()
 
-aruco_dict = aruco.Dictionary_get(aruco.DICT_4X4_50)
-parameters = aruco.DetectorParameters_create()
+# aruco_dict = aruco.Dictionary_get(aruco.DICT_4X4_50)
+# parameters = aruco.DetectorParameters_create()
+dictionary = aruco.getPredefinedDictionary(aruco.DICT_4X4_50)
+parameters = aruco.DetectorParameters()
+detector = aruco.ArucoDetector(dictionary, parameters)
+
+# markerCiorners, markerIds, rejectedCandidates = detector.detectMarkers(frame)
 
 while True:
     frame = piCam2.capture_array()
