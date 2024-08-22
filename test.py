@@ -21,7 +21,8 @@ def detect():
         corners, ids, rejectedCandidates = detector.detectMarkers(frame)
 
         if ids is not None:
-            print(ids[0])
+            print(type(ids[0][0]))
+            print(ids[0][0])
         
         cv2.imshow("piCam", frame)
         if cv2.waitKey(1) == ord('q'):
