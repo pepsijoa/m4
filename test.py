@@ -9,9 +9,7 @@ piCam2.preview_configuration.align()
 piCam2.configure("preview")
 piCam2.start()
 
-# aruco_dict = aruco.Dictionary_get(aruco.DICT_4X4_50)
-# parameters = aruco.DetectorParameters_create()
-dictionary = aruco.getPredefinedDictionary(aruco.DICT_4X4_50)
+dictionary = aruco.getPredefinedDictionary(aruco.DICT_6X6_250)
 parameters = aruco.DetectorParameters()
 detector = aruco.ArucoDetector(dictionary, parameters)
 
