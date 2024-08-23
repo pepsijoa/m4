@@ -3,7 +3,7 @@ import cv2.aruco as aruco
 from picamera2 import Picamera2, Preview
 import time
 
-file = open ('detect.txt', 'w')
+
 
 def detect():
     piCam2 = Picamera2()
@@ -23,11 +23,15 @@ def detect():
         corners, ids, rejectedCandidates = detector.detectMarkers(frame)
 
         if ids is not None:
+            file = open ('detect.txt', 'w')
             file.write(str(ids[0][0]))
+            file.close()
             time.sleep(1)
             #return (str(ids[0][0]))
         else:
+            file = open ('detect.txt', 'w')
             file.write('None')
+            file.close()
             time.sleep(1)
         # cv2.imshow("piCam", frame)
         # if cv2.waitKey(1) == ord('q'):
